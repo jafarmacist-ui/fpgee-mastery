@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Autonomic Nervous System (ANS)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .slideshow-container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            padding: 60px 50px;
+            text-align: center;
+            min-height: 600px;
+            animation: fadeIn 0.5s;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+        }
+
+        p, li {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            text-align: left;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        li {
+            margin: 15px 0;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #764ba2;
+            margin-top: 10px;
+        }
+
+        .diagram {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .branch {
+            flex: 1;
+            min-width: 250px;
+            margin: 20px;
+            padding: 20px;
+            background: #f0f4ff;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .branch.parasympathetic {
+            border-left-color: #764ba2;
+        }
+
+        .branch h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .branch.parasympathetic h3 {
+            color: #764ba2;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: #f8f9fa;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        .slide-counter {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .dots {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dot.active {
+            background-color: #667eea;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            font-size: 1em;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comparison-table tr:hover {
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>The Autonomic Nervous System</h1>
+            <p class="subtitle">Understanding Your Body's Automatic Control System</p>
+            <p style="margin-top: 40px; font-style: italic;">A journey through the systems that regulate your heart, digestion, and more...</p>
+        </div>
+
+        <!-- Slide 2: What is the ANS? -->
+        <div class="slide">
+            <h2>What is the Autonomic Nervous System?</h2>
+            <ul>
+                <li><span class="highlight">Definition:</span> Part of the peripheral nervous system that controls involuntary bodily functions</li>
+                <li>Functions without conscious effort</li>
+                <li>Regulates: heart rate, breathing, digestion, blood pressure, and more</li>
+                <li>Works 24/7 to maintain homeostasis (internal balance)</li>
+            </ul>
+        </div>
+
+        <!-- Slide 3: Three Divisions -->
+        <div class="slide">
+            <h2>Three Divisions of the ANS</h2>
+            <div class="diagram">
+                <div class="branch">
+                    <h3>Sympathetic</h3>
+                    <p>"Fight or Flight"</p>
+                </div>
+                <div class="branch parasympathetic">
+                    <h3>Parasympathetic</h3>
+                    <p>"Rest and Digest"</p>
+                </div>
+                <div class="branch">
+                    <h3>Enteric</h3>
+                    <p>"The Gut Brain"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Sympathetic Nervous System -->
+        <div class="slide">
+            <h2>Sympathetic Nervous System</h2>
+            <p class="subtitle">The "Fight or Flight" Response</p>
+            <ul>
+                <li>Activated during stress or danger</li>
+                <li>Increases heart rate & blood pressure</li>
+                <li>Dilates pupils for better vision</li>
+                <li>Decreases digestion</li>
+                <li>Releases adrenaline & noradrenaline</li>
+                <li>Prepares body for action</li>
+            </ul>
+        </div>
+
+        <!-- Slide 5: Parasympathetic Nervous System -->
+        <div class="slide">
+            <h2>Parasympathetic Nervous System</h2>
+            <p class="subtitle">The "Rest and Digest" Response</p>
+            <ul>
+                <li>Active during calm, relaxed states</li>
+                <li>Decreases heart rate & blood pressure</li>
+                <li>Constricts pupils</li>
+                <li>Enhances digestion</li>
+                <li>Increases saliva & gastric secretions</li>
+                <li>Promotes recovery and energy conservation</li>
+            </ul>
+        </div>
+
+        <!-- Slide 6: Enteric Nervous System -->
+        <div class="slide">
+            <h2>The Enteric Nervous System</h2>
+            <p class="subtitle">Often Called "The Second Brain"</p>
+            <ul>
+                <li>Network of neurons in the gastrointestinal tract</li>
+                <li>Contains ~500 million neurons</li>
+                <li>Operates independently from the brain</li>
+                <li>Controls digestion, gut movements, and secretions</li>
+                <li>Communicates with the brain via the vagus nerve</li>
+                <li>Produces neurotransmitters like serotonin</li>
+            </ul>
+        </div>
+
+        <!-- Slide 7: Comparison Table -->
+        <div class="slide">
+            <h2>Sympathetic vs. Parasympathetic</h2>
+            <table class="comparison-table">
+                <tr>
+                    <th>Function</th>
+                    <th>Sympathetic</th>
+                    <th>Parasympathetic</th>
+                </tr>
+                <tr>
+                    <td><strong>Heart Rate</strong></td>
+                    <td>Increases ↑</td>
+                    <td>Decreases ↓</td>
+                </tr>
+                <tr>
+                    <td><strong>Blood Pressure</strong></td>
+                    <td>Increases ↑</td>
+                    <td>Decreases ↓</td>
+                </tr>
+                <tr>
+                    <td><strong>Digestion</strong></td>
+                    <td>Slows down</td>
+                    <td>Speeds up</td>
+                </tr>
+                <tr>
+                    <td><strong>Pupils</strong></td>
+                    <td>Dilates</td>
+                    <td>Constricts</td>
+                </tr>
+                <tr>
+                    <td><strong>Response Time</strong></td>
+                    <td>Quick</td>
+                    <td>Slow</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Slide 8: Real-World Examples -->
+        <div class="slide">
+            <h2>Real-World Examples</h2>
+            <ul>
+                <li><span class="highlight">You're late for work:</span> Heart races (Sympathetic)</li>
+                <li><span class="highlight">Eating a meal:</span> Digestion increases (Parasympathetic)</li>
+                <li><span class="highlight">Seeing a spider:</span> Pupils dilate, adrenaline surges (Sympathetic)</li>
+                <li><span class="highlight">After exercise:</span> Heart rate gradually slows (Parasympathetic)</li>
+                <li><span class="highlight">Stomach butterflies:</span> Enteric system responds to emotions</li>
+            </ul>
+        </div>
+
+        <!-- Slide 9: Key Neurotransmitters -->
+        <div class="slide">
+            <h2>Key Neurotransmitters</h2>
+            <div class="diagram">
+                <div class="branch">
+                    <h3>Sympathetic</h3>
+                    <p><strong>Noradrenaline</strong> (Norepinephrine)</p>
+                    <p><strong>Adrenaline</strong> (Epinephrine)</p>
+                </div>
+                <div class="branch parasympathetic">
+                    <h3>Parasympathetic</h3>
+                    <p><strong>Acetylcholine</strong></p>
+                </div>
+            </div>
+            <p style="margin-top: 30px;">These chemical messengers carry signals between neurons and organs</p>
+        </div>
+
+        <!-- Slide 10: Maintaining Balance -->
+        <div class="slide">
+            <h2>Maintaining Balance (Homeostasis)</h2>
+            <ul>
+                <li>The ANS constantly balances sympathetic and parasympathetic activity</li>
+                <li><span class="highlight">Acute stress:</span> Sympathetic dominates</li>
+                <li><span class="highlight">Chronic stress:</span> Can dysregulate the ANS</li>
+                <li>Deep breathing activates parasympathetic response</li>
+                <li>Regular exercise improves ANS flexibility</li>
+                <li>Sleep is essential for parasympathetic recovery</li>
+            </ul>
+        </div>
+
+        <!-- Slide 11: Disorders & Dysfunction -->
+        <div class="slide">
+            <h2>ANS Disorders & Dysfunction</h2>
+            <ul>
+                <li><span class="highlight">Dysautonomia:</span> Malfunctioning ANS</li>
+                <li><span class="highlight">POTS:</span> Postural Orthostatic Tachycardia Syndrome</li>
+                <li><span class="highlight">IBS:</span> Irritable Bowel Syndrome (enteric dysfunction)</li>
+                <li><span class="highlight">Anxiety & Panic:</span> Overactive sympathetic response</li>
+                <li><span class="highlight">Diabetic Neuropathy:</span> Nerve damage affecting ANS</li>
+            </ul>
+        </div>
+
+        <!-- Slide 12: Tips for ANS Health -->
+        <div class="slide">
+            <h2>Tips for ANS Health</h2>
+            <ul>
+                <li>🧘 Practice meditation and mindfulness (activates parasympathetic)</li>
+                <li>🏃 Regular physical exercise</li>
+                <li>💤 Maintain consistent sleep schedule</li>
+                <li>🌬️ Deep breathing exercises (especially during stress)</li>
+                <li>🍽️ Eat slowly and mindfully</li>
+                <li>⏰ Limit caffeine and stimulants</li>
+                <li>🤝 Maintain social connections</li>
+            </ul>
+        </div>
+
+        <!-- Slide 13: Summary -->
+        <div class="slide">
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li>The ANS controls involuntary bodily functions automatically</li>
+                <li><span class="highlight">Sympathetic:</span> Activates during stress ("fight or flight")</li>
+                <li><span class="highlight">Parasympathetic:</span> Dominates during rest ("rest and digest")</li>
+                <li><span class="highlight">Enteric:</span> Your "second brain" manages digestion</li>
+                <li>Balance between systems maintains health and well-being</li>
+                <li>Lifestyle choices significantly impact ANS function</li>
+            </ul>
+        </div>
+
+        <!-- Slide 14: Thank You -->
+        <div class="slide">
+            <h1>Thank You!</h1>
+            <p class="subtitle">Your Autonomic Nervous System is working right now to keep you alive</p>
+            <p style="margin-top: 60px; font-size: 1em; color: #999;">Questions?</p>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="dots" id="dots-container"></div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button onclick="changeSlide(-1)">← Previous</button>
+            <span class="slide-counter"><span id="current-slide">1</span> / <span id="total-slides">14</span></span>
+            <button onclick="changeSlide(1)">Next →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+
+            if (n > totalSlides) currentSlide = totalSlides;
+            if (n < 1) currentSlide = 1;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[currentSlide - 1].classList.add('active');
+            dots[currentSlide - 1].classList.add('active');
+
+            document.getElementById('current-slide').textContent = currentSlide;
+        }
+
+        function changeSlide(n) {
+            currentSlide += n;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            showSlide(currentSlide);
+        }
+
+        // Create navigation dots
+        function createDots() {
+            const dotsContainer = document.getElementById('dots-container');
+            for (let i = 1; i <= totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // Initialize
+        createDots();
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
